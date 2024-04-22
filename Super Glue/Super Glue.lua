@@ -1,5 +1,5 @@
 -- @description MYKScripts Super Glue
--- @author Mike Pierluissi
+-- @author MYK
 -- @version 2024.4
 -- @changelog
 --  v2024.4
