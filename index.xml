@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="MYKScripts" commit="d4499f9de98ec37b69923e8b581bc1a336dfdb59">
-  <category name="LoopIt">
+<index version="1" name="MYKScripts" commit="5d86f10fd2afd02749108121b462cb054c508644">
+  <category name="MYKScripts LoopIt">
     <reapack name="MYKScripts LoopIt.lua" type="script" desc="MYKScripts LoopIt">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -15,14 +15,14 @@ REAPER Toolkit GUI library
 ]]></description>
         <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
-      <version name="2024.4" author="MYK" time="2024-04-22T03:18:12Z">
+      <version name="2024.4" author="MYK" time="2024-04-22T03:19:51Z">
         <changelog><![CDATA[v2024.4
     + Initial Release]]></changelog>
-        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/d4499f9de98ec37b69923e8b581bc1a336dfdb59/LoopIt/MYKScripts%20LoopIt.lua</source>
+        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/5d86f10fd2afd02749108121b462cb054c508644/MYKScripts%20LoopIt/MYKScripts%20LoopIt.lua</source>
       </version>
     </reapack>
   </category>
-  <category name="Spread to Markers">
+  <category name="MYKScripts Spread to Markers">
     <reapack name="MYKScripts Spread to Markers.lua" type="script" desc="MYKScripts Spred to Markers">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -37,14 +37,14 @@ REAPER Toolkit GUI library
 ]]></description>
         <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
-      <version name="2024.4" author="MYK" time="2024-04-22T03:18:12Z">
+      <version name="2024.4" author="MYK" time="2024-04-22T03:19:51Z">
         <changelog><![CDATA[v2024.4
     + Initial Release]]></changelog>
-        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/d4499f9de98ec37b69923e8b581bc1a336dfdb59/Spread%20to%20Markers/MYKScripts%20Spread%20to%20Markers.lua</source>
+        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/5d86f10fd2afd02749108121b462cb054c508644/MYKScripts%20Spread%20to%20Markers/MYKScripts%20Spread%20to%20Markers.lua</source>
       </version>
     </reapack>
   </category>
-  <category name="Super Glue">
+  <category name="MYKScripts Super Glue">
     <reapack name="MYKScripts Super Glue.lua" type="script" desc="MYKScripts Super Glue">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -59,14 +59,14 @@ REAPER Toolkit GUI library
 ]]></description>
         <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
-      <version name="2024.4" author="MYK" time="2024-04-22T03:18:12Z">
+      <version name="2024.4" author="MYK" time="2024-04-22T03:19:51Z">
         <changelog><![CDATA[v2024.4
     + Initial Release]]></changelog>
-        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/d4499f9de98ec37b69923e8b581bc1a336dfdb59/Super%20Glue/MYKScripts%20Super%20Glue.lua</source>
+        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/5d86f10fd2afd02749108121b462cb054c508644/MYKScripts%20Super%20Glue/MYKScripts%20Super%20Glue.lua</source>
       </version>
     </reapack>
   </category>
-  <category name="TrackRenamer">
+  <category name="MYKScripts TrackRenamer">
     <reapack name="MYKScripts TrackRenamer.lua" type="script" desc="MYKScripts Track Renamer">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -81,10 +81,10 @@ REAPER Toolkit GUI library
 ]]></description>
         <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
-      <version name="2024.4" author="MYK" time="2024-04-22T03:18:12Z">
+      <version name="2024.4" author="MYK" time="2024-04-22T03:19:51Z">
         <changelog><![CDATA[v2024.4
     + Initial Release]]></changelog>
-        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/d4499f9de98ec37b69923e8b581bc1a336dfdb59/TrackRenamer/MYKScripts%20TrackRenamer.lua</source>
+        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/5d86f10fd2afd02749108121b462cb054c508644/MYKScripts%20TrackRenamer/MYKScripts%20TrackRenamer.lua</source>
       </version>
     </reapack>
   </category>
