@@ -1,20 +1,13 @@
-# ReaPack Repository Template
+# REAPER Scripts by Mike Pierluissi
 
-A template for GitHub-hosted ReaPack repositories with automated
-[reapack-index](https://github.com/cfillion/reapack-index)
-running from GitHub Actions.
+##LoopIt
+Looping media items based on a trimmed item and user input crossfade length in seconds.
 
-Replace the name of the repository in [index.xml](/index.xml) when using this template.
-This will be the name shown in ReaPack.
+##Spread to Markers
+Spread single or groups of items across markers in a REAPER project.
 
-```xml
-<index version="1" name="MYKScripts">
-```
+##Super Glue
+Bounce-in-place groups of media items and track FX to a new track while muting the originals.
 
-Replace the contents of this file ([README.md](/README.md)).
-ReaScripts by Mike Pierluissi
-
-Each package file is expected to begin with a metadata header.
-See [Packaging Documentation](https://github.com/cfillion/reapack-index/wiki/Packaging-Documentation) on reapack-index's wiki.
-
-The URL to import in ReaPack is [https://github.com/`<your username>`/`<repository name>`/raw/master/index.xml](https://github.com/cfillion/reapack-repository-template/raw/master/index.xml).
+##Track Renamer
+Single or batch renaming of tracks with a myriad of features.
