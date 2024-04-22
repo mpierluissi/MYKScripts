@@ -14,15 +14,12 @@
 package.path = reaper.GetResourcePath() .. '/Scripts/rtk/1/?.lua'
 local rtk = require('rtk')
 
--- ================
+
 -- Global Variables
--- ================
 local version = '2024.4'
 local num_media_items = reaper.CountSelectedMediaItems(0)
 
--- ================
 -- Helper Functions
--- ================
 local function window(t)
     local widget_settings = {
         title = t,
@@ -61,17 +58,14 @@ local function button_widget(l)
     return widget_settings
 end
 
--- ======
+
 -- Window
--- ======
 local window = rtk.Window(window('Spread to Markers'))
 local parent_window_vbox = rtk.VBox(box_widget())
 local child_window_hbox1 = rtk.HBox(box_widget())
 local child_window_hbox2 = rtk.HBox(box_widget())
 
--- =======
 -- Widgets
--- =======
 local text_marker_start = rtk.Text(text_widget('Start Marker:'))
 local text_marker_range = rtk.Text(text_widget('Marker Range:'))
 local text_num_items = rtk.Text(text_widget('Media Items Selected: ' .. num_media_items))
@@ -81,9 +75,7 @@ local entry_marker_range = rtk.Entry(entry_widget(tostring(num_media_items)))
 
 local go_button = rtk.Button(button_widget('Go'))
 
--- ==============
 -- Main Functions
--- ==============
 -- Return value of entry widget and turn to number
 local function get_entry_var(w)
     return tonumber(w.value)
@@ -146,9 +138,7 @@ local function main()
     reaper.UpdateArrange()
 end
 
--- ===============
 -- GUI Interaction
--- ===============
 -- On button click
 go_button.onclick = function(self, event)
     main()
@@ -161,9 +151,7 @@ window.onkeypresspost = function(self, event)
     end
 end
 
--- ===================
 -- Window Construction
--- ===================
 child_window_hbox1:add(text_marker_start)
 child_window_hbox1:add(entry_marker_start)
 child_window_hbox1:add(rtk.Box.FLEXSPACE)
