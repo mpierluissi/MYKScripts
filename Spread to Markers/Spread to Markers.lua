@@ -1,25 +1,28 @@
--- @description Spred to Markers
+-- @description MYKScripts Spred to Markers
 -- @author MYK
 -- @version 2024.4
+-- @changelog
+--  v2024.4
+--      + Initial Release
+-- @donation https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC
 -- @about
---   This is an example of a package file. It installs itself as a ReaScript that
---   does nothing but show "Hello World!" in REAPER's scripting console.
---
---   Packages may also include additional files specified using the @provides tag.
---
---   This text is the documentation shown when using ReaPack's "About this package"
---   feature. [Markdown](https://commonmark.org/) *formatting* is supported.
+--  Spread single or groups of items across
+--  markers in a REAPER project.
+--  Requires [REAPER Toolkit GUI library](https://reapertoolkit.dev/index.html).
 
 -- Load Reaper Toolkit library
 package.path = reaper.GetResourcePath() .. '/Scripts/rtk/1/?.lua'
 local rtk = require('rtk')
 
-
+-- ================
 -- Global Variables
+-- ================
 local version = '2024.4'
 local num_media_items = reaper.CountSelectedMediaItems(0)
 
+-- ================
 -- Helper Functions
+-- ================
 local function window(t)
     local widget_settings = {
         title = t,
@@ -58,14 +61,17 @@ local function button_widget(l)
     return widget_settings
 end
 
-
+-- ======
 -- Window
+-- ======
 local window = rtk.Window(window('Spread to Markers'))
 local parent_window_vbox = rtk.VBox(box_widget())
 local child_window_hbox1 = rtk.HBox(box_widget())
 local child_window_hbox2 = rtk.HBox(box_widget())
 
+-- =======
 -- Widgets
+-- =======
 local text_marker_start = rtk.Text(text_widget('Start Marker:'))
 local text_marker_range = rtk.Text(text_widget('Marker Range:'))
 local text_num_items = rtk.Text(text_widget('Media Items Selected: ' .. num_media_items))
@@ -75,7 +81,9 @@ local entry_marker_range = rtk.Entry(entry_widget(tostring(num_media_items)))
 
 local go_button = rtk.Button(button_widget('Go'))
 
+-- ==============
 -- Main Functions
+-- ==============
 -- Return value of entry widget and turn to number
 local function get_entry_var(w)
     return tonumber(w.value)
@@ -138,7 +146,9 @@ local function main()
     reaper.UpdateArrange()
 end
 
+-- ===============
 -- GUI Interaction
+-- ===============
 -- On button click
 go_button.onclick = function(self, event)
     main()
@@ -151,7 +161,9 @@ window.onkeypresspost = function(self, event)
     end
 end
 
+-- ===================
 -- Window Construction
+-- ===================
 child_window_hbox1:add(text_marker_start)
 child_window_hbox1:add(entry_marker_start)
 child_window_hbox1:add(rtk.Box.FLEXSPACE)
