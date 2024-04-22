@@ -1,41 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="MYKScripts" commit="a86dcad982e3641f908b192c9fff90321810dde8">
-  <category name="Example">
-    <reapack name="cfillion_Hello world.lua" type="script" desc="Hello world">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 This is an example of a package file. It installs itself as a ReaScript that does nothing but show "Hello World!" in REAPER's scripting console.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Packages may also include additional files specified using the @provides tag.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 This text is the documentation shown when using ReaPack's "About this package" feature. {\field{\*\fldinst{HYPERLINK "https://commonmark.org/"}}{\fldrslt{\ul
-Markdown
-}}}
- {\i formatting} is supported.\par}
-}
-]]></description>
-      </metadata>
-      <version name="1.0" author="cfillion" time="2021-01-04T23:30:32Z">
-        <source main="main">https://github.com/cfillion/reapack-repository-template/raw/58a3e39ba95bd0f35846aa1f39aa4cb2574295e1/Example/cfillion_Hello%20world.lua</source>
-      </version>
-    </reapack>
-  </category>
+<index version="1" name="MYKScripts" commit="5b0e7f8bad927534c43773912ee4238c5842f3f2">
   <category name="LoopIt">
-    <reapack name="LoopIt.lua" type="script" desc="LoopIt">
+    <reapack name="LoopIt.lua" type="script" desc="MYKScripts LoopIt">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 This is an example of a package file. It installs itself as a ReaScript that does nothing but show "Hello World!" in REAPER's scripting console.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Packages may also include additional files specified using the @provides tag.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 This text is the documentation shown when using ReaPack's "About this package" feature. {\field{\*\fldinst{HYPERLINK "https://commonmark.org/"}}{\fldrslt{\ul
-Markdown
+{\pard \ql \f0 \sa180 \li0 \fi0 Looping media items based on a trimmed item and user input crossfade length in seconds. Requires {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
+REAPER Toolkit GUI library
 }}}
- {\i formatting} is supported.\par}
+.\par}
 }
 ]]></description>
+        <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
       <version name="2024.4" author="MYK" time="2024-04-22T02:19:34Z">
         <source main="main">https://github.com/mpierluissi/MYKScripts/raw/68112714bf47492dc321df0c1bb2992a74fe94ed/LoopIt/LoopIt.lua</source>
@@ -43,20 +21,19 @@ Markdown
     </reapack>
   </category>
   <category name="Spread to Markers">
-    <reapack name="Spread to Markers.lua" type="script" desc="Spred to Markers">
+    <reapack name="Spread to Markers.lua" type="script" desc="MYKScripts Spred to Markers">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 This is an example of a package file. It installs itself as a ReaScript that does nothing but show "Hello World!" in REAPER's scripting console.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Packages may also include additional files specified using the @provides tag.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 This text is the documentation shown when using ReaPack's "About this package" feature. {\field{\*\fldinst{HYPERLINK "https://commonmark.org/"}}{\fldrslt{\ul
-Markdown
+{\pard \ql \f0 \sa180 \li0 \fi0 Spread single or groups of items across markers in a REAPER project. Requires {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
+REAPER Toolkit GUI library
 }}}
- {\i formatting} is supported.\par}
+.\par}
 }
 ]]></description>
+        <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
       <version name="2024.4" author="MYK" time="2024-04-22T02:19:34Z">
         <source main="main">https://github.com/mpierluissi/MYKScripts/raw/68112714bf47492dc321df0c1bb2992a74fe94ed/Spread%20to%20Markers/Spread%20to%20Markers.lua</source>
@@ -64,20 +41,19 @@ Markdown
     </reapack>
   </category>
   <category name="Super Glue">
-    <reapack name="Super Glue.lua" type="script" desc="Super Glue">
+    <reapack name="Super Glue.lua" type="script" desc="MYKScripts Super Glue">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 This is an example of a package file. It installs itself as a ReaScript that does nothing but show "Hello World!" in REAPER's scripting console.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Packages may also include additional files specified using the @provides tag.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 This text is the documentation shown when using ReaPack's "About this package" feature. {\field{\*\fldinst{HYPERLINK "https://commonmark.org/"}}{\fldrslt{\ul
-Markdown
+{\pard \ql \f0 \sa180 \li0 \fi0 Bounce-in-place groups of media items and track FX to a new track while muting the originals. Requires {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
+REAPER Toolkit GUI library
 }}}
- {\i formatting} is supported.\par}
+.\par}
 }
 ]]></description>
+        <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
       <version name="2024.4" author="Mike Pierluissi" time="2024-04-22T02:07:30Z">
         <source main="main">https://github.com/mpierluissi/MYKScripts/raw/47bdb86640eef88ae70f50b630242c1122e5fe65/Super%20Glue/Super%20Glue.lua</source>
@@ -85,20 +61,19 @@ Markdown
     </reapack>
   </category>
   <category name="TrackRenamer">
-    <reapack name="TrackRenamer.lua" type="script" desc="Track Renamer">
+    <reapack name="TrackRenamer.lua" type="script" desc="MYKScripts Track Renamer">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 This is an example of a package file. It installs itself as a ReaScript that does nothing but show "Hello World!" in REAPER's scripting console.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Packages may also include additional files specified using the @provides tag.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 This text is the documentation shown when using ReaPack's "About this package" feature. {\field{\*\fldinst{HYPERLINK "https://commonmark.org/"}}{\fldrslt{\ul
-Markdown
+{\pard \ql \f0 \sa180 \li0 \fi0 Single or batch renaming of tracks with a myriad of features. Requires {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
+REAPER Toolkit GUI library
 }}}
- {\i formatting} is supported.\par}
+.\par}
 }
 ]]></description>
+        <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
       <version name="2024.4" author="MYK" time="2024-04-22T02:19:34Z">
         <source main="main">https://github.com/mpierluissi/MYKScripts/raw/68112714bf47492dc321df0c1bb2992a74fe94ed/TrackRenamer/TrackRenamer.lua</source>
@@ -112,13 +87,18 @@ Markdown
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 REAPER Scripts by Mike Pierluissi\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 LoopIt\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Looping media items based on a trimmed item and user input crossfade length in seconds.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Looping media items based on a trimmed item and user input crossfade length in seconds. version 2024.4\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Spread to Markers\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Spread single or groups of items across markers in a REAPER project.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Spread single or groups of items across markers in a REAPER project. version 2024.4\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Super Glue\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Bounce-in-place groups of media items and track FX to a new track while muting the originals.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Bounce-in-place groups of media items and track FX to a new track while muting the originals. version 2024.4\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Track Renamer\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Single or batch renaming of tracks with a myriad of features.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Single or batch renaming of tracks with a myriad of features. version 2024.4\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 REQUIREMENTS\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
+REAPER Toolkit GUI Library
+}}}
+\par}
 }
 ]]></description>
   </metadata>
