@@ -1,5 +1,5 @@
 -- @description Super Glue
--- @author Mike Pierluissi
+-- @author MYK
 -- @version 2024.4
 -- @about
 --   This is an example of a package file. It installs itself as a ReaScript that
