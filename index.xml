@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="MYKScripts" commit="5d86f10fd2afd02749108121b462cb054c508644">
-  <category name="MYKScripts LoopIt">
+<index version="1" name="MYKScripts" commit="4cf68cf8b3382e6c2b1324d91fa0d58bddc657c1">
+  <category name="Item Edit">
     <reapack name="MYKScripts LoopIt.lua" type="script" desc="MYKScripts LoopIt">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -15,36 +15,12 @@ REAPER Toolkit GUI library
 ]]></description>
         <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
-      <version name="2024.4" author="MYK" time="2024-04-22T03:19:51Z">
+      <version name="2024.4" author="MYK" time="2024-04-22T03:32:54Z">
         <changelog><![CDATA[v2024.4
     + Initial Release]]></changelog>
-        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/5d86f10fd2afd02749108121b462cb054c508644/MYKScripts%20LoopIt/MYKScripts%20LoopIt.lua</source>
+        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/4cf68cf8b3382e6c2b1324d91fa0d58bddc657c1/Item%20Edit/MYKScripts%20LoopIt.lua</source>
       </version>
     </reapack>
-  </category>
-  <category name="MYKScripts Spread to Markers">
-    <reapack name="MYKScripts Spread to Markers.lua" type="script" desc="MYKScripts Spred to Markers">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 Spread single or groups of items across markers in a REAPER project. Requires {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
-REAPER Toolkit GUI library
-}}}
-.\par}
-}
-]]></description>
-        <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
-      </metadata>
-      <version name="2024.4" author="MYK" time="2024-04-22T03:19:51Z">
-        <changelog><![CDATA[v2024.4
-    + Initial Release]]></changelog>
-        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/5d86f10fd2afd02749108121b462cb054c508644/MYKScripts%20Spread%20to%20Markers/MYKScripts%20Spread%20to%20Markers.lua</source>
-      </version>
-    </reapack>
-  </category>
-  <category name="MYKScripts Super Glue">
     <reapack name="MYKScripts Super Glue.lua" type="script" desc="MYKScripts Super Glue">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -59,14 +35,36 @@ REAPER Toolkit GUI library
 ]]></description>
         <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
-      <version name="2024.4" author="MYK" time="2024-04-22T03:19:51Z">
+      <version name="2024.4" author="MYK" time="2024-04-22T03:32:54Z">
         <changelog><![CDATA[v2024.4
     + Initial Release]]></changelog>
-        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/5d86f10fd2afd02749108121b462cb054c508644/MYKScripts%20Super%20Glue/MYKScripts%20Super%20Glue.lua</source>
+        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/4cf68cf8b3382e6c2b1324d91fa0d58bddc657c1/Item%20Edit/MYKScripts%20Super%20Glue.lua</source>
       </version>
     </reapack>
   </category>
-  <category name="MYKScripts TrackRenamer">
+  <category name="Item Navigation">
+    <reapack name="MYKScripts Spread to Markers.lua" type="script" desc="MYKScripts Spred to Markers">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Spread single or groups of items across markers in a REAPER project. Requires {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
+REAPER Toolkit GUI library
+}}}
+.\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
+      </metadata>
+      <version name="2024.4" author="MYK" time="2024-04-22T03:32:54Z">
+        <changelog><![CDATA[v2024.4
+    + Initial Release]]></changelog>
+        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/4cf68cf8b3382e6c2b1324d91fa0d58bddc657c1/Item%20Navigation/MYKScripts%20Spread%20to%20Markers.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Track">
     <reapack name="MYKScripts TrackRenamer.lua" type="script" desc="MYKScripts Track Renamer">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -81,10 +79,10 @@ REAPER Toolkit GUI library
 ]]></description>
         <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
-      <version name="2024.4" author="MYK" time="2024-04-22T03:19:51Z">
+      <version name="2024.4" author="MYK" time="2024-04-22T03:32:54Z">
         <changelog><![CDATA[v2024.4
     + Initial Release]]></changelog>
-        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/5d86f10fd2afd02749108121b462cb054c508644/MYKScripts%20TrackRenamer/MYKScripts%20TrackRenamer.lua</source>
+        <source main="main">https://github.com/mpierluissi/MYKScripts/raw/4cf68cf8b3382e6c2b1324d91fa0d58bddc657c1/Track/MYKScripts%20TrackRenamer.lua</source>
       </version>
     </reapack>
   </category>
