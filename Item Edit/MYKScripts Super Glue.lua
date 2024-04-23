@@ -1,7 +1,9 @@
 -- @description MYKScripts Super Glue
 -- @author MYK
--- @version 2024.4
+-- @version 2024.4.1
 -- @changelog
+--  v2024.4.1
+--      + Select text on startup
 --  v2024.4
 --      + Initial Release
 -- @donation https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC
@@ -187,3 +189,4 @@ window:open{
 }
 
 tail_entry:focus()
+tail_entry:select_all()
