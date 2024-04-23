@@ -4,10 +4,10 @@
 -- @changelog
 --  v2024.4
 --      + Initial Release
--- @donation https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC
 -- @about
 --  Spread single or groups of items across
 --  markers in a REAPER project.
+--  
 --  Requires [REAPER Toolkit GUI library](https://reapertoolkit.dev/index.html).
 
 -- Load Reaper Toolkit library

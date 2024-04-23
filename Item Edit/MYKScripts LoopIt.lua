@@ -4,10 +4,10 @@
 -- @changelog
 --  v2024.4
 --      + Initial Release
--- @donation https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC
 -- @about
 --  Looping media items based on a trimmed item
 --  and user input crossfade length in seconds.
+--  
 --  Requires [REAPER Toolkit GUI library](https://reapertoolkit.dev/index.html).
 
 local version = '2024.4'
