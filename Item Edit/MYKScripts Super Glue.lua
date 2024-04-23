@@ -6,7 +6,6 @@
 --      + Select text on startup
 --  v2024.4
 --      + Initial Release
--- @donation https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC
 -- @about
 --  Bounce-in-place groups of media items and
 --  track FX to a new track while muting the originals.
