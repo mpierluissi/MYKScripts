@@ -12,7 +12,7 @@
 --  
 --  Requires [REAPER Toolkit GUI library](https://reapertoolkit.dev/index.html).
 
-local version = '2024.4'
+local version = '2024.4.1'
 
 -- Library load
 package.path = reaper.GetResourcePath() .. '/Scripts/rtk/1/?.lua'
