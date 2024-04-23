@@ -1,16 +1,18 @@
 -- @description MYKScripts Track Renamer
 -- @author MYK
--- @version 2024.4
+-- @version 2024.4.1
 -- @changelog
+--  v2024.4.1
+--      + Added SHIFT-TAB functionality
+--      + Added Checkbox interaction
 --  v2024.4
 --      + Initial Release
--- @donation https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC
 -- @about
---  Single or batch renaming of tracks with a
---  myriad of features.
+--  Single or batch renaming of tracks
+--  
 --  Requires [REAPER Toolkit GUI library](https://reapertoolkit.dev/index.html).
 
-local version = '2024.4'
+local version = '2024.4.1'
 
 -- Library load
 package.path = reaper.GetResourcePath() .. '/Scripts/rtk/1/?.lua'
@@ -111,7 +113,7 @@ local child_window_hbox11 = rtk.HBox(box_widget(nil, 10))
 
 -- Replace
 local replace_check = rtk.CheckBox(checkbox_widget('Replace'))
-local replace_entry = rtk.Entry(entry_widget('Replace All', 1))
+local replace_entry = rtk.Entry(entry_widget('New track name', 1))
 
 -- Find and Replace
 local find_check = rtk.CheckBox(checkbox_widget('Find and Replace'))
@@ -197,7 +199,7 @@ end
 -- GUI Interaction
 -- Tab Key
 window.onkeypress = function(self, event)
-    if event.keycode == rtk.keycodes.TAB then
+    if event.keycode == rtk.keycodes.TAB and event.shift == false then
         if replace_entry:focused() then
             find_entry:focus()
         elseif find_entry:focused() then
@@ -218,7 +220,66 @@ window.onkeypress = function(self, event)
             replace_entry:focus()
         end
     end
+
+    if event.shift then
+        if replace_entry:focused() then
+            numbering_delim:focus()
+        elseif find_entry:focused() then
+            replace_entry:focus()
+        elseif find_replace_entry:focused() then
+            find_entry:focus()
+        elseif insert_entry:focused() then
+            find_replace_entry:focus()
+        elseif insert_index:focused() then
+            insert_entry:focus()
+        elseif trim_start_entry:focused() then
+            insert_index:focus()
+        elseif trim_end_entry:focused() then
+            trim_start_entry:focus()
+        elseif numbering_start:focused() then
+            trim_end_entry:focus()
+        elseif numbering_delim:focused() then
+            numbering_start:focus()
+        end
+    end
 end
+
+-- Checkmark interaction
+local disable_bool = false
+
+local function checkbox_onchange_focus(w, w2)
+    w.onchange = function(self, event)
+        if not disable_bool then
+            w2:focus()
+        else
+            replace_entry:focus()
+        end
+    end
+end
+
+replace_check.onchange = function(self, event)
+    if not disable_bool then
+        disable_bool = true
+    else
+        disable_bool = false
+    end
+
+    find_entry.disabled = disable_bool
+    find_replace_entry.disabled = disable_bool
+    insert_entry.disabled = disable_bool
+    insert_index.disabled = disable_bool
+    trim_start_entry.disabled = disable_bool
+    trim_end_entry.disabled = disable_bool
+    numbering_start.disabled = disable_bool
+    numbering_delim.disabled = disable_bool
+
+    replace_entry:focus()
+end
+
+checkbox_onchange_focus(find_check, find_entry)
+checkbox_onchange_focus(insert_check, insert_entry)
+checkbox_onchange_focus(trim_check, trim_start_entry)
+checkbox_onchange_focus(numbering_check, numbering_start)
 
 -- Button click
 go_button.onclick = function(self, event)
@@ -283,3 +344,5 @@ window:add(parent_window_vbox)
 window:open{
     align = 'center'
 }
+
+replace_entry:focus()
