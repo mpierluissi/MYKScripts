@@ -2,7 +2,6 @@
 -- @author MYK
 -- @version 2024.4.1
 -- @changelog
---  v2024.4.1
 --      + Select text on startup
 --  v2024.4
 --      + Initial Release

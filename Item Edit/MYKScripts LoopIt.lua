@@ -2,7 +2,6 @@
 -- @author MYK
 -- @version 2024.4
 -- @changelog
---  v2024.4
 --      + Initial Release
 -- @about
 --  Looping media items based on a trimmed item

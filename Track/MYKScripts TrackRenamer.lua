@@ -2,7 +2,6 @@
 -- @author MYK
 -- @version 2024.4.1
 -- @changelog
---  v2024.4.1
 --      + Added SHIFT-TAB functionality
 --      + Added Checkbox interaction
 --  v2024.4
@@ -11,8 +10,6 @@
 --  Single or batch renaming of tracks
 --  
 --  Requires [REAPER Toolkit GUI library](https://reapertoolkit.dev/index.html).
-
-local version = '2024.4.1'
 
 -- Library load
 package.path = reaper.GetResourcePath() .. '/Scripts/rtk/1/?.lua'
@@ -68,14 +65,6 @@ local function button_widget(text, w)
     local widget_settings = {
         tostring(text),
         w = w
-    }
-    return widget_settings
-end
-
--- Text
-local function text_widget(text)
-    local widget_settings = {
-        text,
     }
     return widget_settings
 end
@@ -137,9 +126,6 @@ local numbering_delim = rtk.Entry(entry_widget('Delimiter', .5))
 
 -- Button
 local go_button = rtk.Button(button_widget('Go', .25))
-
--- Labels
-local version_label = rtk.Text(text_widget('Track Renamer v' .. version))
 
 -- Spacers
 local spacer1 = rtk.Spacer(spacer_widget(.5))
@@ -270,8 +256,6 @@ replace_check.onchange = function(self, event)
     insert_index.disabled = disable_bool
     trim_start_entry.disabled = disable_bool
     trim_end_entry.disabled = disable_bool
-    numbering_start.disabled = disable_bool
-    numbering_delim.disabled = disable_bool
 
     replace_entry:focus()
 end
@@ -323,8 +307,6 @@ child_window_hbox9:add(spacer4, widget_align('left'))
 child_window_hbox9:add(numbering_delim, widget_align('left', 'center'))
 
 child_window_hbox10:add(go_button, widget_align('right', 'bottom'))
--- Label
-child_window_hbox11:add(version_label, widget_align('right', 'bottom'))
 
 -- Construct parent_window_vbox
 parent_window_vbox:add(child_window_hbox1)
