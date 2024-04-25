@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="MYKScripts" commit="f12187b684438ed04397ff7f9f005e50bea7a717">
+<index version="1" name="MYKScripts" commit="10d50eb0dbe066c22a39a06ffb16c5ddcb82967b">
   <category name="Item Edit">
     <reapack name="MYKScripts LoopIt.lua" type="script" desc="MYKScripts LoopIt">
       <metadata>
@@ -13,7 +13,6 @@ REAPER Toolkit GUI library
 .\par}
 }
 ]]></description>
-        <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
       <version name="2024.4" author="MYK" time="2024-04-22T03:32:54Z">
         <changelog><![CDATA[v2024.4
@@ -33,7 +32,6 @@ REAPER Toolkit GUI library
 .\par}
 }
 ]]></description>
-        <link rel="donation">https://www.paypal.com/donate/?hosted_button_id=P3YG2YNZWAMAC</link>
       </metadata>
       <version name="2024.4" author="MYK" time="2024-04-22T03:32:54Z">
         <changelog><![CDATA[v2024.4
@@ -84,17 +82,8 @@ v2024.4
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 REAPER Scripts by Mike Pierluissi\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 LoopIt\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Looping media items based on a trimmed item and user input crossfade length in seconds. version 2024.4\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Spread to Markers\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Spread single or groups of items across markers in a REAPER project. version 2024.4\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Super Glue\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Bounce-in-place groups of media items and track FX to a new track while muting the originals. version 2024.4\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Track Renamer\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Single or batch renaming of tracks with a myriad of features. version 2024.4\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 REQUIREMENTS\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 Lua ReaScripts by Mike Pierluissi\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 GUI Scripts require the {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
 REAPER Toolkit GUI Library
 }}}
 \par}
