@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="MYKScripts" commit="10d50eb0dbe066c22a39a06ffb16c5ddcb82967b">
+<index version="1" name="MYKScripts" commit="39179f91af9d3deae0f7dee5fd71852194dfd3f9">
   <category name="Item Edit">
     <reapack name="MYKScripts LoopIt.lua" type="script" desc="MYKScripts LoopIt">
       <metadata>
@@ -82,11 +82,13 @@ v2024.4
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Lua ReaScripts by Mike Pierluissi\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Lua ReaScripts by Mike Pierluissi\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 GUI Scripts require the {\field{\*\fldinst{HYPERLINK "https://reapertoolkit.dev/index.html"}}{\fldrslt{\ul
 REAPER Toolkit GUI Library
 }}}
 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaPack repository link. Paste into Extensions > ReaPack > Import Repositories...\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 https://github.com/mpierluissi/MYKScripts/raw/main/index.xml\par}
 }
 ]]></description>
   </metadata>
