@@ -1,18 +1,18 @@
 -- @description MYKScripts Track Renamer
 -- @author MYK
--- @version 2024.4.1
+-- @version 2025.2.1
 -- @changelog
+--      + Simplified widget creation helper functions
+--      + Made the script more readable
+--      + Reduced overall code size
+--  v2025.2.1
+--      + Variable optimization
 --  v2024.4.1
---      + Added SHIFT-TAB functionality
---      + Added Checkbox interaction
---  v2024.4
 --      + Initial Release
 -- @about
 --  Single or batch renaming of tracks
 --  
 --  Requires [REAPER Toolkit GUI library](https://reapertoolkit.dev/index.html).
-
-local version = '2024.4.1'
 
 -- Library load
 package.path = reaper.GetResourcePath() .. '/Scripts/rtk/1/?.lua'
@@ -28,48 +28,43 @@ end
 
 -- GUI Helpers
 -- Boxes
-local function box_widget(s, p, w, h, t)
-    local widget_settings = {
+local function new_container(initializer, s, p, w, h, t)
+    return initializer {
         spacing = s,
         w = w,
         h = h,
-        padding = p
+        padding = p,
     }
-    return widget_settings
 end
 
--- Spacers
-local function spacer_widget(w)
-    local widget_settings = {
+-- Spacer
+local function new_spacer(w)
+    return rtk.Spacer {
         w = w,
     }
-    return widget_settings
 end
 
 -- CheckBox
-local function checkbox_widget(str)
-    local widget_settings = {
+local function new_checkbox(str)
+    return rtk.CheckBox {
         tostring(str),
     }
-    return widget_settings
 end
 
 -- Entry
-local function entry_widget(placeholder, w)
-    local widget_settings = {
+local function new_entry(placeholder, w)
+    return rtk.Entry {
         placeholder = tostring(placeholder),
         w = w,
     }
-    return widget_settings
 end
 
 -- Button
-local function button_widget(text, w)
-    local widget_settings = {
+local function new_button(text, w)
+    return rtk.Button {
         tostring(text),
         w = w
     }
-    return widget_settings
 end
 
 -- Text
@@ -90,63 +85,6 @@ local function widget_align(h, v)
     return widget_settings
 end
 -- /Helpers --
-
--- Widgets --
--- Window
-local window = rtk.Window {
-    title = 'Rename Tracks',
-    resizable = false,
-}
--- Box
-local parent_window_vbox = rtk.VBox(box_widget(10, nil, 400))
-local child_window_hbox1 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox2 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox3 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox4 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox5 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox6 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox7 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox8 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox9 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox10 = rtk.HBox(box_widget(nil, 10))
-local child_window_hbox11 = rtk.HBox(box_widget(nil, 10))
-
--- Replace
-local replace_check = rtk.CheckBox(checkbox_widget('Replace'))
-local replace_entry = rtk.Entry(entry_widget('New track name', 1))
-
--- Find and Replace
-local find_check = rtk.CheckBox(checkbox_widget('Find and Replace'))
-local find_entry = rtk.Entry(entry_widget('Find', 1))
-local find_replace_entry = rtk.Entry(entry_widget('Replace', 1))
-
--- Insert
-local insert_check = rtk.CheckBox(checkbox_widget('Insert at Index'))
-local insert_entry = rtk.Entry(entry_widget('Insertion', 1))
-local insert_index = rtk.Entry(entry_widget('Index (#)', .5))
-
--- Trim
-local trim_check = rtk.CheckBox(checkbox_widget('Trim From'))
-local trim_start_entry = rtk.Entry(entry_widget('Start (#)', .5))
-local trim_end_entry = rtk.Entry(entry_widget('End (#)', .5))
-
--- Numbering
-local numbering_check = rtk.CheckBox(checkbox_widget('Numbering'))
-local numbering_start = rtk.Entry(entry_widget('Start (#)', .5))
-local numbering_delim = rtk.Entry(entry_widget('Delimiter', .5))
-
--- Button
-local go_button = rtk.Button(button_widget('Go', .25))
-
--- Labels
-local version_label = rtk.Text(text_widget('Track Renamer v' .. version))
-
--- Spacers
-local spacer1 = rtk.Spacer(spacer_widget(.5))
-local spacer2 = rtk.Spacer(spacer_widget(.5))
-local spacer3 = rtk.Spacer(spacer_widget(.5))
-local spacer4 = rtk.Spacer(spacer_widget(.5))
--- /Widgets --
 
 local function main()
     reaper.Undo_BeginBlock()
@@ -176,7 +114,12 @@ local function main()
             end
             if insert_check.value == rtk.CheckBox.CHECKED then
                 local retval, track_name = reaper.GetSetMediaTrackInfo_String(track, "P_NAME", "", false)
-                local new_track_name = track_name:sub(1, insert_var) .. insert_str .. track_name:sub(insert_var + 1, #track_name)
+                local new_track_name = ''
+                if insert_var == -1 then
+                    new_track_name = track_name .. insert_str
+                else
+                    new_track_name = track_name:sub(1, insert_var) .. insert_str .. track_name:sub(insert_var + 1, #track_name)
+                end
                 reaper.GetSetMediaTrackInfo_String(track, "P_NAME", new_track_name, true)
             end
             if trim_check.value == rtk.CheckBox.CHECKED then
@@ -197,53 +140,101 @@ local function main()
 end
 
 -- GUI Interaction
--- Tab Key
-window.onkeypress = function(self, event)
-    if event.keycode == rtk.keycodes.TAB and event.shift == false then
-        if replace_entry:focused() then
-            find_entry:focus()
-        elseif find_entry:focused() then
-            find_replace_entry:focus()
-        elseif find_replace_entry:focused() then
-            insert_entry:focus()
-        elseif insert_entry:focused() then
-            insert_index:focus()
-        elseif insert_index:focused() then
-            trim_start_entry:focus()
-        elseif trim_start_entry:focused() then
-            trim_end_entry:focus()
-        elseif trim_end_entry:focused() then
-            numbering_start:focus()
-        elseif numbering_start:focused() then
-            numbering_delim:focus()
-        elseif numbering_delim:focused() then
-            replace_entry:focus()
-        end
-    end
+-- Widgets
+-- Widgets --
+-- Window
+local window = rtk.Window {
+    title = 'Rename Tracks',
+    resizable = false,
+}
 
-    if event.shift then
-        if replace_entry:focused() then
-            numbering_delim:focus()
-        elseif find_entry:focused() then
-            replace_entry:focus()
-        elseif find_replace_entry:focused() then
-            find_entry:focus()
-        elseif insert_entry:focused() then
-            find_replace_entry:focus()
-        elseif insert_index:focused() then
-            insert_entry:focus()
-        elseif trim_start_entry:focused() then
-            insert_index:focus()
-        elseif trim_end_entry:focused() then
-            trim_start_entry:focus()
-        elseif numbering_start:focused() then
-            trim_end_entry:focus()
-        elseif numbering_delim:focused() then
-            numbering_start:focus()
-        end
-    end
-end
+-- Box
+local widget_box = new_container(rtk.VBox, 10, nil, 400)
+local replace_hbox = new_container(rtk.HBox, nil, 10)
+local find_hbox = new_container(rtk.HBox, nil, 10)
+local find_replace_hbox = new_container(rtk.HBox, nil, 10)
+local insert_str_hbox = new_container(rtk.HBox, nil, 10)
+local insert_idx_hbox = new_container(rtk.HBox, nil, 10)
+local trim_start_hbox = new_container(rtk.HBox, nil, 10)
+local trim_end_hbox = new_container(rtk.HBox, nil, 10)
+local numbering_start_hbox = new_container(rtk.HBox, nil, 10)
+local numbering_end_hbox = new_container(rtk.HBox, nil, 10)
+local button_hbox = new_container(rtk.HBox, nil, 10)
 
+-- Replace
+local replace_check = new_checkbox('Replace')
+local replace_entry = new_entry('New track name', 1)
+
+-- Find and Replace
+local find_check = new_checkbox('Find and Replace')
+local find_entry = new_entry('Find', 1)
+local find_replace_entry = new_entry('Replace', 1)
+
+-- Insert
+local insert_check = new_checkbox('Insert at Index')
+local insert_entry = new_entry('Insertion', 1)
+local insert_index = new_entry('Index (#)', .5)
+
+-- Trim
+local trim_check = new_checkbox('Trim From')
+local trim_start_entry = new_entry('Start (#)', .5)
+local trim_end_entry = new_entry('End (#)', .5)
+
+-- Numbering
+local numbering_check = new_checkbox('Numbering')
+local numbering_start = new_entry('Start (#)', .5)
+local numbering_delim = new_entry('Delimiter', .5)
+
+-- Button
+local go_button = new_button('Go', .25)
+
+-- Spacers
+local spacer = rtk.Spacer(new_spacer(.5))
+-- /Widgets --
+
+-- Checkbox fill
+replace_hbox:add(replace_check, widget_align('left', 'center'))
+replace_hbox:add(replace_entry, widget_align('right', 'center'))
+
+find_hbox:add(find_check, widget_align('left', 'center'))
+find_hbox:add(find_entry, widget_align('right', 'center'))
+
+find_replace_hbox:add(spacer, widget_align('left'))
+find_replace_hbox:add(find_replace_entry, widget_align('right', 'center'))
+
+insert_str_hbox:add(insert_check, widget_align('left', 'center'))
+insert_str_hbox:add(insert_entry, widget_align('right', 'center'))
+
+insert_idx_hbox:add(spacer, widget_align('left'))
+insert_idx_hbox:add(insert_index, widget_align('left', 'center'))
+
+trim_start_hbox:add(trim_check, widget_align('left', 'center'))
+trim_start_hbox:add(trim_start_entry, widget_align('left', 'center'))
+
+trim_end_hbox:add(spacer, widget_align('left'))
+trim_end_hbox:add(trim_end_entry, widget_align('left', 'center'))
+
+numbering_start_hbox:add(numbering_check, widget_align('left', 'center'))
+numbering_start_hbox:add(numbering_start, widget_align('left', 'center'))
+
+numbering_end_hbox:add(spacer, widget_align('left'))
+numbering_end_hbox:add(numbering_delim, widget_align('left', 'center'))
+
+button_hbox:add(go_button, widget_align('right', 'bottom'))
+
+-- Construct widget_box
+widget_box:add(replace_hbox)
+widget_box:add(find_hbox)
+widget_box:add(find_replace_hbox)
+widget_box:add(insert_str_hbox)
+widget_box:add(insert_idx_hbox)
+widget_box:add(trim_start_hbox)
+widget_box:add(trim_end_hbox)
+widget_box:add(numbering_start_hbox)
+widget_box:add(numbering_end_hbox)
+widget_box:add(button_hbox)
+
+-- GUI Interaction
 -- Checkmark interaction
 local disable_bool = false
 
@@ -293,54 +284,55 @@ window.onkeypresspost = function(self, event)
     end
 end
 
--- Container Build
--- Widgets
-child_window_hbox1:add(replace_check, widget_align('left', 'center'))
-child_window_hbox1:add(replace_entry, widget_align('right', 'center'))
+-- Tab Key
+window.onkeypress = function(self, event)
+    if event.keycode == rtk.keycodes.TAB and event.shift == false then
+        if replace_entry:focused() then
+            find_entry:focus()
+        elseif find_entry:focused() then
+            find_replace_entry:focus()
+        elseif find_replace_entry:focused() then
+            insert_entry:focus()
+        elseif insert_entry:focused() then
+            insert_index:focus()
+        elseif insert_index:focused() then
+            trim_start_entry:focus()
+        elseif trim_start_entry:focused() then
+            trim_end_entry:focus()
+        elseif trim_end_entry:focused() then
+            numbering_start:focus()
+        elseif numbering_start:focused() then
+            numbering_delim:focus()
+        elseif numbering_delim:focused() then
+            replace_entry:focus()
+        end
+    end
 
-child_window_hbox2:add(find_check, widget_align('left', 'center'))
-child_window_hbox2:add(find_entry, widget_align('right', 'center'))
-
-child_window_hbox3:add(spacer1, widget_align('left'))
-child_window_hbox3:add(find_replace_entry, widget_align('right', 'center'))
-
-child_window_hbox4:add(insert_check, widget_align('left', 'center'))
-child_window_hbox4:add(insert_entry, widget_align('right', 'center'))
-
-child_window_hbox5:add(spacer2, widget_align('left'))
-child_window_hbox5:add(insert_index, widget_align('left', 'center'))
-
-child_window_hbox6:add(trim_check, widget_align('left', 'center'))
-child_window_hbox6:add(trim_start_entry, widget_align('left', 'center'))
-
-child_window_hbox7:add(spacer3, widget_align('left'))
-child_window_hbox7:add(trim_end_entry, widget_align('left', 'center'))
-
-child_window_hbox8:add(numbering_check, widget_align('left', 'center'))
-child_window_hbox8:add(numbering_start, widget_align('left', 'center'))
-
-child_window_hbox9:add(spacer4, widget_align('left'))
-child_window_hbox9:add(numbering_delim, widget_align('left', 'center'))
-
-child_window_hbox10:add(go_button, widget_align('right', 'bottom'))
--- Label
-child_window_hbox11:add(version_label, widget_align('right', 'bottom'))
-
--- Construct parent_window_vbox
-parent_window_vbox:add(child_window_hbox1)
-parent_window_vbox:add(child_window_hbox2)
-parent_window_vbox:add(child_window_hbox3)
-parent_window_vbox:add(child_window_hbox4)
-parent_window_vbox:add(child_window_hbox5)
-parent_window_vbox:add(child_window_hbox6)
-parent_window_vbox:add(child_window_hbox7)
-parent_window_vbox:add(child_window_hbox8)
-parent_window_vbox:add(child_window_hbox9)
-parent_window_vbox:add(child_window_hbox10)
-parent_window_vbox:add(child_window_hbox11)
+    if event.shift then
+        if replace_entry:focused() then
+            numbering_delim:focus()
+        elseif find_entry:focused() then
+            replace_entry:focus()
+        elseif find_replace_entry:focused() then
+            find_entry:focus()
+        elseif insert_entry:focused() then
+            find_replace_entry:focus()
+        elseif insert_index:focused() then
+            insert_entry:focus()
+        elseif trim_start_entry:focused() then
+            insert_index:focus()
+        elseif trim_end_entry:focused() then
+            trim_start_entry:focus()
+        elseif numbering_start:focused() then
+            trim_end_entry:focus()
+        elseif numbering_delim:focused() then
+            numbering_start:focus()
+        end
+    end
+end
 
 -- Window Build and Open
-window:add(parent_window_vbox)
+window:add(widget_box)
 window:open{
     align = 'center'
 }
